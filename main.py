@@ -10,6 +10,16 @@ from src.mangaworld import Mangaworld
 from src.mangapark import Mangapark
 from src.scanvf import Scanvf
 
+from fastapi.middleware.cors import CORSMiddleware
+# Allow all origins (no restrictions)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins (any domain)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
+
 app = FastAPI()
 
 mangareader_genres = ["Action, Adventure, Comedy, Cooking, Doujinshi, Drama, Erotica, Fantasy, Gender Bender, Harem, Historical, Horror, Isekai, Josei, Manhua, Manhwa, Martial arts, Mature, Mecha, Medical, Mystery, One shot, Pornographic, Pschological, Romance, School life, Sci fi, Seinen, Shoujo, Shounen ai, Slice of life, Smut, Sports, Supernatural, Tragedy, Webtoons, Yaoi, Yuri"]
